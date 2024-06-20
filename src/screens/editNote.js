@@ -4,8 +4,8 @@ import CustomButton from '../components/customButton'
 import CustomTextInput from '../components/customTextInput'
 
 const EditNote = ({setCurrentPage, dataPage, editNote}) => {
-    const [title, setTitle] = useState('')
-    const [desc, setDesc] = useState('')
+    const [title, setTitle] = useState(dataPage.title)
+    const [desc, setDesc] = useState(dataPage.desc)
 
     return (
         <View style={styles.container}>
@@ -14,7 +14,7 @@ const EditNote = ({setCurrentPage, dataPage, editNote}) => {
             text={title}
             onChange={setTitle}
             label='Judul'
-            placeholder={dataPage.title}
+            placeholder='Judul'
             numberOfLines={1}
             multiline={false}
           />
@@ -22,7 +22,7 @@ const EditNote = ({setCurrentPage, dataPage, editNote}) => {
             text={desc}
             onChange={setDesc}
             label="Deskripsi"
-            placeholder={dataPage.desc}
+            placeholder="Deskripsi"
             multiline
             numberOfLines={4}
           />
